@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./App.css";
 
 // imports
-import imagesArray from "./data/imagesArray";
+import { imagesArray } from "./data/imagesArray";
+import Image from "./components/Image";
 
 function App() {
   const [images] = useState(imagesArray);
@@ -25,11 +26,7 @@ function App() {
       <section>
         <h1>Image Carousel App</h1>
         {images.map((image, i) =>
-          current === i ? (
-            <img className="image" key={i} src={image} alt="animal" />
-          ) : (
-            ""
-          )
+          current === i ? <Image image={image} index={i} /> : ""
         )}
       </section>
 
