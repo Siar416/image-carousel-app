@@ -1,10 +1,10 @@
-const Button = ({ displayPreviousImage, displayNextImage }) => {
+const Button = ({ displayPreviousImage, displayNextImage, id }) => {
   return (
     <button
       id={displayPreviousImage ? "previous" : "next"}
       onClick={displayPreviousImage ? displayPreviousImage : displayNextImage}
     >
-      Previous
+      {id === "next" ? "next" : "previous"}
     </button>
   );
 };

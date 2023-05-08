@@ -29,7 +29,7 @@ function App() {
         {images &&
           images.map((image, i) =>
             current === i ? (
-              <Image image={image.imageURL} index={image.id} />
+              <Image image={image.imageURL} index={image.id} key={image.id} />
             ) : (
               ""
             )
@@ -37,14 +37,8 @@ function App() {
       </section>
 
       <section className="btn">
-        {/* <button id="previous" onClick={displayPreviousImage}>
-          Previous
-        </button>
-        <button id="next" onClick={displayNextImage}>
-          Next
-        </button> */}
-        <Button displayPreviousImage={displayPreviousImage} />
-        <Button displayNextImage={displayNextImage} />
+        <Button displayPreviousImage={displayPreviousImage} id="previous" />
+        <Button displayNextImage={displayNextImage} id="next" />
       </section>
     </>
   );
