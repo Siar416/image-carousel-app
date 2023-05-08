@@ -4,6 +4,7 @@ import "./App.css";
 // imports
 import { imagesArray } from "./data/imagesArray";
 import Image from "./components/Image";
+import Button from "./components/Button";
 
 function App() {
   const [images] = useState(imagesArray);
@@ -36,12 +37,14 @@ function App() {
       </section>
 
       <section className="btn">
-        <button id="previous" onClick={displayPreviousImage}>
+        {/* <button id="previous" onClick={displayPreviousImage}>
           Previous
         </button>
         <button id="next" onClick={displayNextImage}>
           Next
-        </button>
+        </button> */}
+        <Button displayPreviousImage={displayPreviousImage} />
+        <Button displayNextImage={displayNextImage} />
       </section>
     </>
   );
