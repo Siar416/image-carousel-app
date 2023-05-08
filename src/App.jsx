@@ -1,33 +1,43 @@
 import { useState } from "react";
 import "./App.css";
 
-const images = [
-  "https://images.pexels.com/photos/3836292/pexels-photo-3836292.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  "https://images.pexels.com/photos/2792157/pexels-photo-2792157.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  "https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-];
+// imports
+import imagesArray from "./data/imagesArray";
 
 function App() {
-  const [current, setCurrent] = useState(images[0]);
+  const [images] = useState(imagesArray);
+  const [current, setCurrent] = useState(0);
 
-  const displayNextImage = () => {};
+  const displayNextImage = () => {
+    setCurrent((currentImage) =>
+      currentImage === images.length - 1 ? 0 : current + 1
+    );
+  };
 
-  const displayPreviousImage = () => {};
+  const displayPreviousImage = () => {
+    setCurrent((currentImage) =>
+      currentImage === 0 ? images.length - 1 : current - 1
+    );
+  };
 
   return (
     <>
       <section>
         <h1>Image Carousel App</h1>
-        <img src={current} alt="animal" />
+        {images.map((image, i) =>
+          current === i ? (
+            <img className="image" key={i} src={image} alt="animal" />
+          ) : (
+            ""
+          )
+        )}
       </section>
 
-      <section>
-        <button id="previous" onClick={(e) => displayPreviousImage(e)}>
+      <section className="btn">
+        <button id="previous" onClick={displayPreviousImage}>
           Previous
         </button>
-        <button id="next" onClick={(e) => displayNextImage(e)}>
+        <button id="next" onClick={displayNextImage}>
           Next
         </button>
       </section>
