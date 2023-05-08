@@ -4,7 +4,7 @@ const Button = ({ displayPreviousImage, displayNextImage, id }) => {
       id={displayPreviousImage ? "previous" : "next"}
       onClick={displayPreviousImage ? displayPreviousImage : displayNextImage}
     >
-      {id === "next" ? "next" : "previous"}
+      {id === "next" ? "Next" : "Previous"}
     </button>
   );
 };
