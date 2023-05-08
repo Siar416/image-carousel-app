@@ -25,9 +25,14 @@ function App() {
     <>
       <section>
         <h1>Image Carousel App</h1>
-        {images.map((image, i) =>
-          current === i ? <Image image={image} index={i} /> : ""
-        )}
+        {images &&
+          images.map((image, i) =>
+            current === i ? (
+              <Image image={image.imageURL} index={image.id} />
+            ) : (
+              ""
+            )
+          )}
       </section>
 
       <section className="btn">
