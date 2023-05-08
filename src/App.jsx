@@ -3,8 +3,8 @@ import "./App.css";
 
 // imports
 import { imagesArray } from "./data/imagesArray";
-import Image from "./components/Image";
-import Button from "./components/Button";
+import Image from "./components/Image/Image";
+import Button from "./components/Button/Button";
 
 function App() {
   const [images] = useState(imagesArray);

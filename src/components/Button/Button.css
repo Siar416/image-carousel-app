@@ -1,0 +1,17 @@
+.btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn button {
+  height: 2rem;
+  width: 6rem;
+}
+
+#previous {
+  background-color: crimson;
+}
+
+#next {
+  background-color: rgb(45, 111, 45);
+}
